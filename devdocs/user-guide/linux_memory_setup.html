@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>bblean.smiles &#8212; BitBIRCH-Lean v0.0 (dev) Manual</title>
+    <title>Linux Memory Setup &#8212; BitBIRCH-Lean v0.0 (dev) Manual</title>
   
   
   
@@ -44,11 +44,11 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_api_autogen/bblean.smiles';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/linux_memory_setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="bblean.similarity" href="bblean.similarity.html" />
-    <link rel="prev" title="bblean.fingerprints" href="bblean.fingerprints.html" />
+    <link rel="next" title="API Reference" href="../api-reference.html" />
+    <link rel="prev" title="Tuning BitBIRCH parameters" href="parameters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0 (dev)" />
@@ -140,14 +140,14 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../user-guide.html">
     User guide
   </a>
 </li>
 
 
-<li class="nav-item current active">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../api-reference.html">
     API reference
   </a>
@@ -219,10 +219,6 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -256,14 +252,14 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../user-guide.html">
     User guide
   </a>
 </li>
 
 
-<li class="nav-item current active">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../api-reference.html">
     API reference
   </a>
@@ -320,13 +316,8 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="bblean.bitbirch.html">bblean.bitbirch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.fingerprints.html">bblean.fingerprints</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">bblean.smiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.similarity.html">bblean.similarity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.multiround.html">bblean.multiround</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.analysis.html">bblean.analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.plotting.html">bblean.plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Tuning BitBIRCH parameters</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linux Memory Setup</a></li>
 </ul>
 </div>
 </nav></div>
@@ -361,9 +352,9 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../api-reference.html" class="nav-link">API Reference</a></li>
+    <li class="breadcrumb-item"><a href="../user-guide.html" class="nav-link">User guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">bblean.smiles</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Linux Memory Setup</span></li>
   </ul>
 </nav>
 </div>
@@ -380,48 +371,106 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-bblean.smiles">
-<span id="bblean-smiles"></span><h1>bblean.smiles<a class="headerlink" href="#module-bblean.smiles" title="Link to this heading">#</a></h1>
-<p>SMILES manipulation</p>
-<p class="rubric">Functions</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#bblean.smiles.load_smiles" title="bblean.smiles.load_smiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_smiles</span></code></a></p></td>
-<td><p>Simple utility to load smiles from a <code class="docutils literal notranslate"><span class="pre">*.smi</span></code> file</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#bblean.smiles.calc_num_smiles" title="bblean.smiles.calc_num_smiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_num_smiles</span></code></a></p></td>
-<td><p>Get the total number of smiles in a sequene of paths</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#bblean.smiles.iter_smiles_from_paths" title="bblean.smiles.iter_smiles_from_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_smiles_from_paths</span></code></a></p></td>
-<td><p>Iterate over smiles in a sequence of smiles paths</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="linux-memory-setup">
+<span id="id1"></span><h1>Linux Memory Setup<a class="headerlink" href="#linux-memory-setup" title="Link to this heading">#</a></h1>
+<p>On MacOS and Windows memory compression is enabled by default. However on Linux, memory
+compression (e.g. <code class="docutils literal notranslate"><span class="pre">zram</span></code> and <code class="docutils literal notranslate"><span class="pre">zswap</span></code>) is not enabled. Usually this is not an issue,
+but if you are running a system with limited RAM, enabling these features can help
+improve performance by compressing memory pages. This document will provide a
+step-by-step guide to enable <code class="docutils literal notranslate"><span class="pre">zram</span></code> and <code class="docutils literal notranslate"><span class="pre">zswap</span></code> on a Linux system.</p>
+<section id="zram-setup">
+<h2><code class="docutils literal notranslate"><span class="pre">Zram</span></code> setup<a class="headerlink" href="#zram-setup" title="Link to this heading">#</a></h2>
+<p>This quick start guide follows the <code class="docutils literal notranslate"><span class="pre">zram</span></code> article on the ArchLinux wiki. See the <a class="reference external" href="https://wiki.archlinux.org/title/Zram">article</a> for more information.</p>
+<ol class="arabic">
+<li><dl>
+<dt>Step 1: Install Required Packages</dt><dd><p>You can install <code class="docutils literal notranslate"><span class="pre">zram</span></code> using your package manager. For example, on Debian-based systems, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>zram-tools
+</pre></div>
 </div>
-<dl class="py function">
-<dt class="sig sig-object py" id="bblean.smiles.load_smiles">
-<span class="sig-prename descclassname"><span class="pre">bblean.smiles.</span></span><span class="sig-name descname"><span class="pre">load_smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bblean/smiles.html#load_smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bblean.smiles.load_smiles" title="Link to this definition">#</a></dt>
-<dd><p>Simple utility to load smiles from a <code class="docutils literal notranslate"><span class="pre">*.smi</span></code> file</p>
-<dl class="field-list simple">
+</dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="bblean.smiles.calc_num_smiles">
-<span class="sig-prename descclassname"><span class="pre">bblean.smiles.</span></span><span class="sig-name descname"><span class="pre">calc_num_smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bblean/smiles.html#calc_num_smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bblean.smiles.calc_num_smiles" title="Link to this definition">#</a></dt>
-<dd><p>Get the total number of smiles in a sequene of paths</p>
-<dl class="field-list simple">
+</li>
+<li><dl>
+<dt>Step 2: Set up swap area</dt><dd><p>To create a swap device for <code class="docutils literal notranslate"><span class="pre">zram</span></code>, you can use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mkswap<span class="w"> </span>/dev/zram0
+</pre></div>
+</div>
+</dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="bblean.smiles.iter_smiles_from_paths">
-<span class="sig-prename descclassname"><span class="pre">bblean.smiles.</span></span><span class="sig-name descname"><span class="pre">iter_smiles_from_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bblean/smiles.html#iter_smiles_from_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bblean.smiles.iter_smiles_from_paths" title="Link to this definition">#</a></dt>
-<dd><p>Iterate over smiles in a sequence of smiles paths</p>
-<dl class="field-list simple">
+</li>
+<li><dl>
+<dt>Step 3: Configure zram settings</dt><dd><p>Open <code class="docutils literal notranslate"><span class="pre">/etc/sysctl.d/99-zram.conf</span></code> with nano:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/sysctl.d/99-zram.conf
+</pre></div>
+</div>
+<p>Add the following lines to the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vm.swappiness<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">180</span>
+vm.watermark_boost_factor<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+vm.watermark_scale_factor<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">125</span>
+vm.page-cluster<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>These are the recommended settings according to the ArchLinux Wiki. Feel free to adjust any other <code class="docutils literal notranslate"><span class="pre">zram</span></code> settings as needed.</p>
+</dd>
 </dl>
-</dd></dl>
-
+</li>
+<li><dl>
+<dt>Step 4: Activate <code class="docutils literal notranslate"><span class="pre">zram</span></code></dt><dd><p>You can enable <code class="docutils literal notranslate"><span class="pre">zram</span></code> by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>swapon<span class="w"> </span>--discard<span class="w"> </span>--priority<span class="w"> </span><span class="m">100</span><span class="w"> </span>/dev/zram0
+</pre></div>
+</div>
+<p>It is important that the priority for <code class="docutils literal notranslate"><span class="pre">zram</span></code> is the highest of all swapfiles. This way, Linux will first use <code class="docutils literal notranslate"><span class="pre">zram</span></code> and then use other swapfiles.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Step 5: Verify <code class="docutils literal notranslate"><span class="pre">zram</span></code> is active</dt><dd><p>To check if <code class="docutils literal notranslate"><span class="pre">zram</span></code> is enabled and working correctly, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>swapon
+</pre></div>
+</div>
+<p>You should see an entry for <code class="docutils literal notranslate"><span class="pre">zram0</span></code> in the output, indicating that <code class="docutils literal notranslate"><span class="pre">zram</span></code> is active.</p>
+<p>Example output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">       </span>TYPE<span class="w">       </span>SIZE<span class="w"> </span>USED<span class="w"> </span>PRIO
+/swapfile<span class="w">  </span>file<span class="w">         </span>2G<span class="w">   </span>0B<span class="w">   </span>-2
+/dev/zram0<span class="w"> </span>partition<span class="w">   </span>16G<span class="w">   </span>0B<span class="w">  </span><span class="m">100</span>
+</pre></div>
+</div>
+<p>A higher numeric value for priority (PRIO) means that Linux will use the <code class="docutils literal notranslate"><span class="pre">zram0</span></code> swap before the <code class="docutils literal notranslate"><span class="pre">swapfile</span></code>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Step 6: Disabling <code class="docutils literal notranslate"><span class="pre">zram</span></code></dt><dd><p>If you need to disable <code class="docutils literal notranslate"><span class="pre">zram</span></code>, you can stop the service and disable it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>swapoff<span class="w"> </span>/dev/zram0
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="zswap-setup">
+<h2><code class="docutils literal notranslate"><span class="pre">Zswap</span></code> setup<a class="headerlink" href="#zswap-setup" title="Link to this heading">#</a></h2>
+<p>Zswap is usually preinstalled with Debian distributions. To check whether <code class="docutils literal notranslate"><span class="pre">zswap</span></code> is enabled, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/module/zswap/parameters/enabled
+</pre></div>
+</div>
+<p>This will display <code class="docutils literal notranslate"><span class="pre">Y</span></code> if zswap is enabled and <code class="docutils literal notranslate"><span class="pre">N</span></code> if it is disabled.
+The next section shows how to enable <code class="docutils literal notranslate"><span class="pre">zswap</span></code> and change its parameters for the current session.</p>
+<p>To enable zswap, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/module/zswap/parameters/enabled
+</pre></div>
+</div>
+<p>Changing <code class="docutils literal notranslate"><span class="pre">zswap</span></code> parameters is similar to enabling <code class="docutils literal notranslate"><span class="pre">zswap</span></code> For example, you can change the algorithm by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>zstd<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/module/zswap/parameters/compressor
+</pre></div>
+</div>
+<p>and the maximum pool percent by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/module/zswap/parameters/max_pool_percent
+</pre></div>
+</div>
+<p>The max pool percent is the amount of memory zswap is allowed to use for memory compression.</p>
+</section>
 </section>
 
 
@@ -435,20 +484,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="bblean.fingerprints.html"
+       href="parameters.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">bblean.fingerprints</p>
+        <p class="prev-next-title">Tuning BitBIRCH parameters</p>
       </div>
     </a>
     <a class="right-next"
-       href="bblean.similarity.html"
+       href="../api-reference.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">bblean.similarity</p>
+        <p class="prev-next-title">API Reference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -458,26 +507,6 @@
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bblean.smiles.load_smiles"><code class="docutils literal notranslate"><span class="pre">load_smiles()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bblean.smiles.calc_num_smiles"><code class="docutils literal notranslate"><span class="pre">calc_num_smiles()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bblean.smiles.iter_smiles_from_paths"><code class="docutils literal notranslate"><span class="pre">iter_smiles_from_paths()</span></code></a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

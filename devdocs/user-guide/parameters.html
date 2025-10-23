@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>bblean.smiles &#8212; BitBIRCH-Lean v0.0 (dev) Manual</title>
+    <title>Tuning BitBIRCH parameters &#8212; BitBIRCH-Lean v0.0 (dev) Manual</title>
   
   
   
@@ -44,11 +44,12 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_api_autogen/bblean.smiles';</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/parameters';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="bblean.similarity" href="bblean.similarity.html" />
-    <link rel="prev" title="bblean.fingerprints" href="bblean.fingerprints.html" />
+    <link rel="next" title="Linux Memory Setup" href="linux_memory_setup.html" />
+    <link rel="prev" title="User guide" href="../user-guide.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0 (dev)" />
@@ -140,14 +141,14 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../user-guide.html">
     User guide
   </a>
 </li>
 
 
-<li class="nav-item current active">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../api-reference.html">
     API reference
   </a>
@@ -219,10 +220,6 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -256,14 +253,14 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="../user-guide.html">
     User guide
   </a>
 </li>
 
 
-<li class="nav-item current active">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../api-reference.html">
     API reference
   </a>
@@ -320,13 +317,8 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="bblean.bitbirch.html">bblean.bitbirch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.fingerprints.html">bblean.fingerprints</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">bblean.smiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.similarity.html">bblean.similarity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.multiround.html">bblean.multiround</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.analysis.html">bblean.analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bblean.plotting.html">bblean.plotting</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tuning BitBIRCH parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux_memory_setup.html">Linux Memory Setup</a></li>
 </ul>
 </div>
 </nav></div>
@@ -361,9 +353,9 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../api-reference.html" class="nav-link">API Reference</a></li>
+    <li class="breadcrumb-item"><a href="../user-guide.html" class="nav-link">User guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">bblean.smiles</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Tuning BitBIRCH parameters</span></li>
   </ul>
 </nav>
 </div>
@@ -380,48 +372,99 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-bblean.smiles">
-<span id="bblean-smiles"></span><h1>bblean.smiles<a class="headerlink" href="#module-bblean.smiles" title="Link to this heading">#</a></h1>
-<p>SMILES manipulation</p>
-<p class="rubric">Functions</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#bblean.smiles.load_smiles" title="bblean.smiles.load_smiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_smiles</span></code></a></p></td>
-<td><p>Simple utility to load smiles from a <code class="docutils literal notranslate"><span class="pre">*.smi</span></code> file</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#bblean.smiles.calc_num_smiles" title="bblean.smiles.calc_num_smiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_num_smiles</span></code></a></p></td>
-<td><p>Get the total number of smiles in a sequene of paths</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#bblean.smiles.iter_smiles_from_paths" title="bblean.smiles.iter_smiles_from_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_smiles_from_paths</span></code></a></p></td>
-<td><p>Iterate over smiles in a sequence of smiles paths</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<dl class="py function">
-<dt class="sig sig-object py" id="bblean.smiles.load_smiles">
-<span class="sig-prename descclassname"><span class="pre">bblean.smiles.</span></span><span class="sig-name descname"><span class="pre">load_smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bblean/smiles.html#load_smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bblean.smiles.load_smiles" title="Link to this definition">#</a></dt>
-<dd><p>Simple utility to load smiles from a <code class="docutils literal notranslate"><span class="pre">*.smi</span></code> file</p>
-<dl class="field-list simple">
+  <section id="tuning-bitbirch-parameters">
+<span id="bblean-parameters"></span><h1>Tuning BitBIRCH parameters<a class="headerlink" href="#tuning-bitbirch-parameters" title="Link to this heading">#</a></h1>
+<p>BitBIRCH has a few parameters parameters that can be adjusted to modify the quality of
+the resulting clustering.</p>
+<section id="merge-criterion-and-tolerance">
+<h2>Merge criterion and tolerance<a class="headerlink" href="#merge-criterion-and-tolerance" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">merge_criterion</span></code> is used to determine whether two clusters can be merged inside a
+node in the BitBIRCH tree. The criteria may be asymetric (they consider differently
+clusters already in the tree, <em>old clusters</em>, and clusters that are being inserted, or
+<em>nominee clusters</em>). In the following, diameter-complement refers to <span class="math notranslate nohighlight">\(1 - D_{JT}\)</span>
+and radius-complement to <span class="math notranslate nohighlight">\(1 - R_{JT}\)</span>. There are three main merge criteria
+implemented:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>radius (symmetric):</dt><dd><p>The radius-complement of the <em>resulting cluster</em>
+must be less or equal than the <code class="docutils literal notranslate"><span class="pre">threshold</span></code> value.</p>
+</dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="bblean.smiles.calc_num_smiles">
-<span class="sig-prename descclassname"><span class="pre">bblean.smiles.</span></span><span class="sig-name descname"><span class="pre">calc_num_smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bblean/smiles.html#calc_num_smiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bblean.smiles.calc_num_smiles" title="Link to this definition">#</a></dt>
-<dd><p>Get the total number of smiles in a sequene of paths</p>
-<dl class="field-list simple">
+</li>
+<li><dl class="simple">
+<dt>diameter (symmetric):</dt><dd><p>The diameter-complement (equivalently, the average similarity) of the
+<em>resulting cluster</em> must be less or equal than the <code class="docutils literal notranslate"><span class="pre">threshold</span></code> value.</p>
+</dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="bblean.smiles.iter_smiles_from_paths">
-<span class="sig-prename descclassname"><span class="pre">bblean.smiles.</span></span><span class="sig-name descname"><span class="pre">iter_smiles_from_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles_paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bblean/smiles.html#iter_smiles_from_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bblean.smiles.iter_smiles_from_paths" title="Link to this definition">#</a></dt>
-<dd><p>Iterate over smiles in a sequence of smiles paths</p>
-<dl class="field-list simple">
+</li>
+<li><dl class="simple">
+<dt>tolerance-diameter (asymmetric):</dt><dd><p>The <em>diameter</em> criteria must be satisfied <strong>and</strong> the diameter-commplement of the
+<em>resulting cluster</em> must be greater or equal to that of the <em>old cluster</em> (unless the
+<em>old cluster</em> has a single fingerprint). Some slack can be provided with a value of
+<code class="docutils literal notranslate"><span class="pre">tolerance</span></code>.</p>
+</dd>
 </dl>
-</dd></dl>
-
+</li>
+<li><dl class="simple">
+<dt>tolerance-radius (asymmetric):</dt><dd><p>The <em>radius</em> criterion must be satisfied <strong>and</strong>
+the radius-complement of the <em>resulting cluster</em> must be greater or equal to that of
+the <em>old cluster</em> (unless the <em>old cluster</em> has a single fingerprint). Some slack
+can be provided with a value of <code class="docutils literal notranslate"><span class="pre">tolerance</span></code>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>tolerance-legacy (asymmetric):</dt><dd><p><strong>This is providded for compatibility with old BitBIRCH versions only, in general it
+should be avoided.</strong> The <em>diameter</em> criterion must be satisfied <strong>and</strong> The value of
+<span class="math notranslate nohighlight">\((isim(X \cup new_fp)(N + 1) - isim(X)(N - 1)) / 2\)</span> must be greater or equal
+to that of the <em>old cluster</em> (unless the <em>old cluster</em> has a single fingerprint, or
+the new cluster has more than one fingerprint). Some slack can be provided with a
+value of <code class="docutils literal notranslate"><span class="pre">tolerance</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Both <strong>tolerance-diameter</strong> and <strong>tolerance-radius</strong> reduce the <code class="docutils literal notranslate"><span class="pre">tolerance</span></code> slack
+exponentially as the cluster gets larger. This behaviour is usually desirable, but can
+be turned off with <code class="docutils literal notranslate"><span class="pre">adaptive=False</span></code>.</p>
+<p>Currently we recommend the <strong>diameter</strong> criteria for the initial build of the tree, and
+the corresponding <strong>tolerance-diameter</strong> criteria for refinement and tree-combining. The
+default slack value for tolerance (0.05) is good for most purposes, although you may
+want no slack (tolerance=0) if it is important to maintain the average Tanimoto values
+after refinement. Using a very large value for tolerance will flatten the isim
+distribution.</p>
+</section>
+<section id="threshold">
+<h2>Threshold<a class="headerlink" href="#threshold" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">threshold</span></code> determines the minimum metric acceptable within a given cluster.
+If adding a new molecule to a cluster would result in a lower average similarity than
+<code class="docutils literal notranslate"><span class="pre">threshold</span></code>, BitBIRCH will instead create a new cluster. High threshold values may
+result in <em>many small, compact clusters</em>. Low threshold may result in <em>few large,
+diffuse clusters</em>.</p>
+<p>The clustering results for a given threshold value will depend <strong>on the kind of
+fingerprint used</strong>. Sparse fingerprints (e. g. ECFPs) typically have lower pairwise
+Jaccard-Tanimoto similarities, which means you will want a low threshold to recover
+meaningful structure. Denser fingerprints (e. g. the default <code class="xref any docutils literal notranslate"><span class="pre">rdkit</span></code>
+fingerprints) require larger threshold.</p>
+<p>A typical recommendation is to use a threshold in the range of <em>0.2-0.35</em> for ECFP4 or
+ECFP6, and a threshold in the range of <strong>0.5-0.65</strong> for <code class="xref any docutils literal notranslate"><span class="pre">rdkit</span></code> fingerprints. Within
+these ranges the method is not very sensitive to the threshold value chosen, but
+choosing the wrong range for a given fingerprint kind may be <strong>very disadvantageous</strong>.</p>
+</section>
+<section id="branching-factor">
+<h2>Branching factor<a class="headerlink" href="#branching-factor" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">branching_factor</span></code> determines how many clusters each node of the BitBIRCH tree
+can hold before splitting into new nodes. A high branching factor will result in fewer
+nodes, which means tree insertions will better approximate a thorough search over the
+full fingerprint set, and memory usage will be lower. However, a very high branching
+factor, may also incurr in a higher computational cost.</p>
+<p>A recommended branching factor that performs well in terms of memory use and compute
+cost is 254. Higher branching factors may be useful to reduce memory usage when
+clustering hundreds of millions of molecules, at the cost of some speed (for example you
+may want 1000 for 100M-200M molecules).</p>
+<p>The clustering results depend on the <code class="docutils literal notranslate"><span class="pre">branching_factor</span></code>, but only very weakly. Most of
+the effect is limited to performance and memory usage.</p>
+</section>
 </section>
 
 
@@ -435,20 +478,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="bblean.fingerprints.html"
+       href="../user-guide.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">bblean.fingerprints</p>
+        <p class="prev-next-title">User guide</p>
       </div>
     </a>
     <a class="right-next"
-       href="bblean.similarity.html"
+       href="linux_memory_setup.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">bblean.similarity</p>
+        <p class="prev-next-title">Linux Memory Setup</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -458,26 +501,6 @@
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bblean.smiles.load_smiles"><code class="docutils literal notranslate"><span class="pre">load_smiles()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bblean.smiles.calc_num_smiles"><code class="docutils literal notranslate"><span class="pre">calc_num_smiles()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bblean.smiles.iter_smiles_from_paths"><code class="docutils literal notranslate"><span class="pre">iter_smiles_from_paths()</span></code></a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
